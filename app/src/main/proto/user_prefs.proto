@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.yandroid.chat";
+option java_multiple_files = true;
+
+message SettingPreferences {
+  string token = 1;
+  string username = 2;
+  string email = 3;
+}

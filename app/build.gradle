@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
+    id "com.google.protobuf"
 }
 
 android {
@@ -36,6 +37,25 @@ android {
     buildToolsVersion '33.0.0'
 }
 
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.21.5"
+    }
+
+    // Generates the java Protobuf-lite code for the Protobufs in this project. See
+    // https://github.com/google/protobuf-gradle-plugin#customizing-protobuf-compilation
+    // for more information.
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.8.0'
@@ -55,9 +75,6 @@ dependencies {
     //eventbus
     implementation("org.greenrobot:eventbus:3.3.1")
 
-    // fragment
-    implementation "androidx.fragment:fragment-ktx:$fragment_version"
-    debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 
     // paging
     implementation "androidx.paging:paging-runtime:$paging_version"
@@ -74,9 +91,10 @@ dependencies {
     implementation "androidx.room:room-rxjava3:$room_version"
     implementation "androidx.room:room-paging:2.5.0-alpha03"
 
-    // data store
-    implementation "androidx.datastore:datastore-preferences:1.0.0"
-    implementation "androidx.datastore:datastore-preferences-rxjava3:1.0.0"
+    // datastore
+    implementation "androidx.datastore:datastore:1.0.0"
+    implementation "androidx.datastore:datastore-rxjava3:1.0.0"
+    implementation 'com.google.protobuf:protobuf-javalite:3.21.5'
 
 
     // rx
@@ -93,7 +111,5 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
-
-
 
 }

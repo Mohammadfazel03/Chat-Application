@@ -12,8 +12,14 @@ buildscript {
         rxjava_version = "3.1.5"
         rxandroid_version = "3.0.0"
     }
+
+    repositories {
+        gradlePluginPortal()
+    }
+
     dependencies {
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.19'
     }
 }
 
