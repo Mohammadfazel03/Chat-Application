@@ -12,6 +12,7 @@
         android:layout_marginTop="56dp"
         android:fontFamily="@font/roboto_black"
         android:text="Welcome back!"
+        android:letterSpacing="0.05"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
@@ -26,6 +27,7 @@
         android:text="We`re so exited see you again!"
         android:textColor="#4F5660"
         android:textSize="14sp"
+        android:letterSpacing="0.02"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

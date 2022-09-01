@@ -8,9 +8,14 @@
 
     <style name="Theme.Chat" parent="Base.Theme.Chat" />
 
-    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
-<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Button.TextButton</item>-->
-<!--        <item name="shapeAppearance">@style/ShapeAppearance.App.SmallComponent</item>-->
-        <item name="android:textColor">#FFA000</item>
+    <style name="TextAppearanceTopBarTitle">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#000</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="CircularShapeAppearanceOverlay">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
     </style>
 </resources>
