@@ -1,7 +1,6 @@
 package com.yandroid.chat.view.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,10 +26,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        homeViewModel.data.observe(viewLifecycleOwner) {
+        homeViewModel.settingPreferences.observe(viewLifecycleOwner) {
             if (it.token.isEmpty()) {
                 findNavController().navigate(R.id.action_homeFragment_to_auth_graph)
             }
+        }
+
+        homeViewModel.connectionState.observe(viewLifecycleOwner) {
+            binding.toolbar.subtitle = it
         }
 
     }

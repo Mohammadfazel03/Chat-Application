@@ -9,18 +9,22 @@
 
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#f6f6f6"
             app:title="Chats"
             app:titleCentered="true"
-            app:titleTextAppearance="@style/TextAppearanceTopBarTitle" />
+            app:subtitleCentered="true"
+            app:subtitleTextAppearance="@style/TextAppearanceTopBarSubTitle"
+            app:titleTextAppearance="@style/TextAppearanceTopBarTitle"
+             />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -28,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_layout"
         tools:listitem="@layout/chat_item"
         tools:itemCount="10"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />

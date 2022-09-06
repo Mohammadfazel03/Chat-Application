@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'androidx.navigation.safeargs.kotlin'
     id "com.google.protobuf"
+    id "kotlin-kapt"
+    id "kotlinx-serialization"
 }
 
 android {
@@ -115,5 +117,17 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_version"
+
+    //ktor
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-okhttp:$ktor_version"
+    implementation "io.ktor:ktor-serialization-kotlinx-json:$ktor_version"
+    implementation "io.ktor:ktor-client-websockets:$ktor_version"
+
+    // serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0"
+
+
+
 
 }
